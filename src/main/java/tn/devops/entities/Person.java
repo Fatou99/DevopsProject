@@ -1,10 +1,10 @@
 package tn.devops.entities;
 
 public class Person {
-    public String name;
-    public int age;
-    public String address;
-    public String email;
+    private String name;
+    private int age;
+    private String address;
+    private String email;
 
     public Person(String name, int age, String address, String email) {
         this.name = name;
