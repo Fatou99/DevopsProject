@@ -1,4 +1,11 @@
 package tn.devops.entities;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+
 @Entity
 public class Teacher extends Person{
 
@@ -7,7 +14,7 @@ public class Teacher extends Person{
     }
 
     @OneToMany(mappedBy = "teacher")
-    private List<Research> researches;
+    private Collection<Research> researches;
 
     //Research 
     /*
