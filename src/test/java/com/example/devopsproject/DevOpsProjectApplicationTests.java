@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class DevOpsProjectApplicationTests {
 
-	@Autowired
+	/*@Autowired
 	PersonManagement personService;
 
 	@Autowired
@@ -44,6 +44,6 @@ class DevOpsProjectApplicationTests {
 		int personId= personService.addPerson(p);
 		int personAge= personService.updatePersonAge(personId,16);
 		assertEquals(personAge,16);
-	}
+	}*/
 
 }
