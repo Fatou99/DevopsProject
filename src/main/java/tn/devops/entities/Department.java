@@ -1,2 +1,12 @@
-package tn.devops.entities;public class Department {
+package tn.devops.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+@Entity
+public class Department implements Serializable {
+    @Id
+    private int departmentId;
+    private String name;
+    public Department(){}
 }

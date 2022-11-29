@@ -1,6 +1,8 @@
 package tn.devops.entities;
 
 public class Person {
+
+    private int id;
     private String name;
     private int age;
     private String address;
@@ -21,6 +23,9 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getId(){return id;}
+    public void setId(int id){this.id=id;}
 
     public int getAge() {
         return age;

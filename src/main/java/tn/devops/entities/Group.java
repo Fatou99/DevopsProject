@@ -10,14 +10,18 @@ import java.util.List;
 @Entity
 public class Group implements Serializable {
     @Id
-    private int GroupId;
+    private int groupId;
     private String groupName;
     private int groupCapacity;
-    @OneToMany(mappedBy="ls")
+    @OneToMany(mappedBy="g")
     private List<Student> ls;
 
     public int getId(){
-        return GroupId;
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 
     public String getName(){
@@ -27,4 +31,9 @@ public class Group implements Serializable {
     public int getCapacity(){
         return groupCapacity;
     }
+
+    public void setName(String name){groupName=name;}
+    public void setCapacity(int capacity){groupCapacity=capacity;}
+
+    public Group(){}
 }
