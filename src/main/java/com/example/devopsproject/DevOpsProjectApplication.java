@@ -1,4 +1,4 @@
-package com.example.devopsproject;
+/*package com.example.devopsproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,4 +10,4 @@ public class DevOpsProjectApplication {
 		SpringApplication.run(DevOpsProjectApplication.class, args);
 	}
 
-}
+}*/
