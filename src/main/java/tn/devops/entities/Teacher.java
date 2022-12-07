@@ -1,10 +1,6 @@
 package tn.devops.entities;
-
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 
 @Entity
@@ -16,8 +12,8 @@ public class Teacher {
     private String email;
     @ManyToOne
     private Department department;
-    @OneToMany(mappedBy = "teacher")
-    private Collection<Research> researches;
+//    @OneToMany(mappedBy = "teacher")
+//    private Collection<Research> researches;
 
 
     public Teacher(String name, int age, String address, String email) {
@@ -60,11 +56,5 @@ public class Teacher {
 	
 	
     
-    
-    //Research 
-    /*
-    @ManyToOne
-    @JoinColumn(name="teacher_id") : à vérifier
-    private Teacher teacher;
-    */
+   
 }

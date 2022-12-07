@@ -1,18 +1,28 @@
 package tn.devops.entities;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.*;
 
+@Entity
 public class Department {
-
+	 @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int departmentId;
+     @Column
     private String name;
+    
+    @OneToOne(mappedBy = "teacher")
+    private Teacher head;
 
     @OneToMany(mappedBy = "department")
     private List<Student> students;
 
     @OneToMany(mappedBy = "department")
     private List<Teacher> teachers;
+    
+    public Department (String name) {
+    	this.name = name;
+    }
 
     public int getDepartmentId() {
         return departmentId;
@@ -38,6 +48,8 @@ public class Department {
     public Collection<Teacher> getTeachers() {
         return (Collection<Teacher>) teachers;
     }
+    
+    
 
 
 }
