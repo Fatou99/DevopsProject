@@ -49,11 +49,11 @@ public class Tests {
         Assertions.assertThat(courseUpdated.getCourseName()).isEqualTo("Engineering");
 
     }
-
+  /*
     @Test
 
 
-    public void deleteCourseTest(){
+ public void deleteCourseTest(){
 
 
         Course course = new Course(15,"Devops", 4);
@@ -62,6 +62,6 @@ public class Tests {
         courseService.deleteCourses(courseId);
         assertNull(courseService.findCourseById(courseId));
 
-    }
+    }*/
 
 }
