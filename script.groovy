@@ -1,8 +1,9 @@
 def pushToNexus() {
     echo "pushing the jar file to Nexus maven-snapshots repo..."
-    bat 'mvn clean package -D maven.test.skip=true deploy:deploy-file -D groupId=com.example -D artifactId=DevOpsProject -D version=2.7.5 -D packaging=jar -D repositoryId=deploymentRepo -D url=http://localhost:8081/repository/maven-releases/ -D file=target/DevOpsProjects-0.0.1-SNAPSHOT.jar'
-
+    bat 'mvn clean install -D maven.test.skip=true'
+    nexusArtifactUploader artifacts: [[artifactId: 'DevOpsProject', classifier: '', file: 'target/DevOpsProjects-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'com.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
 }
+
 
 def sonarScan() {
     echo "Run sonarQube scan..."
