@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.devops.repository.IResearchRepository;
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 @Service
 public class ResearchManagement implements IResearchManagement{
@@ -23,29 +23,18 @@ public class ResearchManagement implements IResearchManagement{
 
     @Override
     public String updateResearchTitle(int id, String title) {
-        try {
-            Research r = repo.findById(id).orElse(null);
-            r.setTitle(title);
-            repo.save(r);
-            return r.getTitle();
-        }
-        catch(NullPointerException e) {
-            System.out.println("NullPointerException thrown! No research found.");
-        }
-        return ("no research found");
+        Research r = repo.findById(id).orElse(null);
+        r.setTitle(title);
+        repo.save(r);
+        return r.getTitle();
     }
 
     @Override
     public String updateResearchTopic(int id, String topic) {
-        try {
-            Research r = repo.findById(id).orElse(null);
-            r.setTopic(topic);
-            repo.save(r);
-            return r.getTopic();
-        } catch(NullPointerException e) {
-            System.out.println("NullPointerException thrown!");
-        }
-        return ("no research found");
+        Research r = repo.findById(id).orElse(null);
+        r.setTopic(topic);
+        repo.save(r);
+        return r.getTopic();
     }
 
     @Override
