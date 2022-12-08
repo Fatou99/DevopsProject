@@ -56,7 +56,7 @@ public class Tests {
     public void deleteCourseTest(){
 
 
-        Course course = new Course(3,"Devops", 4);
+        Course course = new Course(5,"Devops", 4);
 
         int courseId= courseService.addCourse(course);
         courseService.deleteCourses(courseId);
