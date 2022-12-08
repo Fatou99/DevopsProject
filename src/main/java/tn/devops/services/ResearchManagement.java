@@ -23,10 +23,16 @@ public class ResearchManagement implements IResearchManagement{
 
     @Override
     public String updateResearchTitle(int id, String title) {
-        Research r = repo.findById(id).orElse(null);
-        r.setTitle(title);
-        repo.save(r);
-        return r.getTitle();
+        try {
+            Research r = repo.findById(id).orElse(null);
+            r.setTitle(title);
+            repo.save(r);
+            return r.getTitle();
+        }
+        catch(NullPointerException e) {
+            System.out.println("NullPointerException thrown!");
+        }
+        return ("no research found");
     }
 
     @Override
