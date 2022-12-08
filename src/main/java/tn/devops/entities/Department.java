@@ -20,8 +20,9 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private List<Teacher> teachers;
     
-    public Department (String name) {
-    	this.name = name;
+    public Department (int id, String name) {
+    	this.departmentId = id;
+        this.name = name;
     }
 
     public int getDepartmentId() {
