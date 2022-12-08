@@ -30,17 +30,22 @@ public class ResearchManagement implements IResearchManagement{
             return r.getTitle();
         }
         catch(NullPointerException e) {
-            System.out.println("NullPointerException thrown!");
+            System.out.println("NullPointerException thrown! No research found.");
         }
         return ("no research found");
     }
 
     @Override
     public String updateResearchTopic(int id, String topic) {
-        Research r = repo.findById(id).orElse(null);
-        r.setTopic(topic);
-        repo.save(r);
-        return r.getTopic();
+        try {
+            Research r = repo.findById(id).orElse(null);
+            r.setTopic(topic);
+            repo.save(r);
+            return r.getTopic();
+        } catch(NullPointerException e) {
+            System.out.println("NullPointerException thrown!");
+        }
+        return ("no research found");
     }
 
     @Override
