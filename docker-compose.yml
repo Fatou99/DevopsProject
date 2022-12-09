@@ -9,7 +9,7 @@ services:
       - MYSQL_ROOT_PASSWORD=Faten123.
       - MYSQL_DATABASE=schoolmanagementsystem
     ports:
-      - 3306:3306
+      - 3307:3306
     volumes:
       - db:/var/lib/mysql
   app:
